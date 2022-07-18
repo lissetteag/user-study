@@ -41,16 +41,18 @@
   margin-left: 4rem;
   margin-right: 13rem;
   justify-content: flex-end;
+  font-size: large;
 }
 
 .submi input {
   /* border: none; */
-  width: 20rem;
+  width: 25rem;
   height: 2rem;
   margin-right: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
 
 .submi input:focus {
   outline: none;
