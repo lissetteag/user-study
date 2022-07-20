@@ -6,11 +6,11 @@ const TableTitle = ({ title }) => {
     <div className="tableTitle">
       <ul>
         <li>{title}</li>
-        <li>Relevant</li>
+        <li>Correct</li>
         <li>Obvious</li>
         <li>Redundant</li>
-        <li>Context</li>
-        <li>Specific</li>
+        <li>Contextualized</li>
+        <li>Generalizable</li>
       </ul>
     </div>
   );

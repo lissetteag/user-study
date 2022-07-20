@@ -69,29 +69,29 @@ function App() {
             <h3>Information</h3>
             <br />
             <p>
-              The figure shows a class diagram with a class in blue. This class is the target class. 
-              The target class is the class subject to the recommendations. The classes shown in grey
-              are the context of the target class.
+              The figure shows a class diagram with a class in blue. This class is the target class subject to the recommendations. 
+              The target class is the class subject to the recommendations. The other classes of the class diagram, 
+              shown in grey, are the context information of the target class.
             </p>
             <br />
             <p>
-              Evaluate the recommended items presented in list to the right using the following metrics
+              Evaluate the recommended items presented in the list to the right using the following criteria:
             </p>
             <ul>
               <li>
-                <b>Relevant:</b> The recommended item is relevant to the target class
+                <b>Correct:</b> The recommended item is correct for the target class
               </li>
               <li>
-                <b>Obvious:</b> The recommended item is too obvious for the target class
+                <b>Obvious:</b> The recommended item is an item you could have easily come up with yourself
               </li>
               <li>
-                <b>Redundant:</b> The recommended item exist or is similar to an existing one
+                <b>Redundant:</b> The recommended item exists or is similar to an existing one
               </li>
               <li>
-                <b>Context:</b> The recommended item is relevant to target class and its context
+                <b>Contextualized:</b> The recommended item belongs to the diagram domain
               </li>
               <li>
-                <b>Specific:</b> The recommended item is specific to the target class
+                <b>Generalizable:</b> The recommended item is also applicable to other classes of the diagram
               </li>
             </ul>
           </div>
