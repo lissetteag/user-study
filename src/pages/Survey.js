@@ -28,7 +28,7 @@ import { useAppContext } from "../context/AppContext";
 // ];
 
 function getPageData(case_id) {
-  const caseIds = participants[0]["caseID"];
+  const caseIds = participants[case_id]["caseID"];
 
   let caseIDdataArray = [];
 
