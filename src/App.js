@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./app.css";
 import TableRow from "./components/TableRow";
 import TableTitle from "./components/TableTitle";
-// import Hola from "./components/Hola";
+import data from "./data/testUserStudy.json";
 
 const attributes = [
   "password",
@@ -23,6 +23,8 @@ const methods = [
   "get student()",
   "log out()",
 ];
+
+console.log(data);
 
 function App() {
   const [page, setPage] = useState(1);
@@ -63,7 +65,7 @@ function App() {
       <div className="container">
         <div className="leftBlock">
           <div className="image">
-            <img src={`/img/${page}.png`} alt="first" />
+            <img src={`/img/74.png`} alt="first" />
           </div>
           <div className="description">
             <h3>Information</h3>
