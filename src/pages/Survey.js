@@ -48,7 +48,6 @@ function Survey() {
   /* Function definition */
   const nextPage = (e) => {
     e.preventDefault();
-
     setPage(page + 1);
     if (page === 3) setPage(0);
   };
