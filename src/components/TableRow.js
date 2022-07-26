@@ -4,7 +4,7 @@ import "../styles/tableRow.css";
 const TableRow = ({ item }) => {
   return (
     <div className="rowItem">
-      <p>{item}</p>
+      <p>{item.itemName}</p>
 
       <div className="checkboxes">
         <input
