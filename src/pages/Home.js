@@ -13,10 +13,15 @@ function Home() {
     e.preventDefault();
 
     let inputId = inputRef.current.value;
-    dispatch({ type: "navigate", value: inputId });
-    // console.log(state);
 
-    navigate("/survey");
+    if( Number(inputId)){
+      dispatch({ type: "navigate", value: inputId });
+      // console.log(state);
+      navigate("/survey");
+    } else{
+      alert("Please enter the integer...")
+    }
+
   };
 
   // UseContext when using useReducer
@@ -34,12 +39,10 @@ function Home() {
     <div className="home">
       <h1>User study</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aut eum
-        dolores quaerat repudiandae iusto. Similique alias cupiditate mollitia
-        autem laudantium obcaecati dolore nam quisquam provident. Possimus dicta
-        esse inventore amet perferendis doloremque rem obcaecati tempore ducimus
-        sint similique corrupti aspernatur quisquam tenetur, explicabo animi
-        consequuntur voluptates sunt magni assumenda?
+      This study aims to evaluate recommendations for class diagrams. 
+      The recommendations are generated with Droid, a model-driven solution to automate the synthesis of recommender systems for modelling languages. 
+      Participation in this study is voluntary. During the study, the participants will have to evaluate several items that have been recommended for 3 different class diagrams, 
+      according to several quality criteria. This study is scientific and has no economic or commercial purposes.
       </p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="peas">Enter your ID to proceed: </label>

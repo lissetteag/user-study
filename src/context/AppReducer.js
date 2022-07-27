@@ -21,6 +21,9 @@ export const appReducer = (state, action) => {
         homeActive: !state.homeActive,
         surveyActive: !state.surveyActive,
       };
+
+      
     }
-  }
+    default: return initialState;
+  } 
 };

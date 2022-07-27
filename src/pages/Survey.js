@@ -5,32 +5,16 @@ import TableTitle from "../components/TableTitle";
 import participants from "../data/ParticipantsWithCaseIDs.json";
 import data from "../data/JSSUserStudyCases_311Education.json";
 import { useAppContext } from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
-// const attributes = [
-//   "password",
-//   "email",
-//   "Phonenumber",
-//   "class",
-//   "id",
-//   "email",
-//   "classes",
-//   "color",
-// ];
-// const methods = [
-//   "study()",
-//   "can enroll()",
-//   "remove student()",
-//   "add activity()",
-//   "write()",
-//   "get student()",
-//   "log out()",
-// ];
-
-function getPageData(case_id) {
-  const caseIds = participants[case_id ? case_id : 0]["caseID"];
+//Get the cases assigned to the participant 
+function getPageData(participant_id) {
+  //Get the id cases for the participant
+  const caseIds = participants[participant_id ? participant_id : 0]["caseID"];
 
   let caseIDdataArray = [];
 
+  //Get the cases for the cases id collected
   for (const caseId of caseIds) {
     let extArr = data.filter((d) => d.caseID === caseId);
     caseIDdataArray.push(extArr);
@@ -39,11 +23,13 @@ function getPageData(case_id) {
   return caseIDdataArray;
 }
 
+
 function Survey() {
+  const navigate = useNavigate();
   const { state } = useAppContext();
   const [page, setPage] = useState(1);
   let imgs = [74, 266, 476];
-  console.log("****************", page);
+  // console.log("****************", page);
 
   /* Function definition */
   const nextPage = (e) => {
@@ -61,19 +47,19 @@ function Survey() {
   };
 
   const reset = (e) => {
-    setPage(1);
+    navigate("/Finish")
   };
 
   /* Function calls */
   let data = getPageData(state.id);
   // console.log(state);
 
-  let currentData = data[page - 1 < 0 ? setPage(1) : page - 1];
+  let currentData = data[page - 1 < 0 ? setPage(3) : page - 1];
   // console.log(currentData);
-
+let imageId = currentData[1].targetID;
   let methods = currentData.filter((curr) => curr.type === "Operation");
   let attributes = currentData.filter((curr) => curr.type === "Property");
-
+            // src={`/img/${imgs[page - 1 < 0 ? setPage(1) : page - 1]}.png`}
   return (
     <div className="app">
       <div className="header">
@@ -91,7 +77,7 @@ function Survey() {
         <div className="leftBlock">
           <div className="image">
             <img
-              src={`/img/${imgs[page - 1 < 0 ? setPage(1) : page - 1]}.png`}
+              src={`/img/${imageId}.png`}
               alt="first"
             />
           </div>

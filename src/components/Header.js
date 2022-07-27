@@ -15,7 +15,7 @@ const Header = ({ name }) => {
 
   return (
     <div className="header">
-      <h1>Survey something...</h1>
+      <h1>Droid</h1>
       <nav className="nav">
         <Link
           className={home ? "navActive" : "navHome"}

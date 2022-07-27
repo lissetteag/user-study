@@ -2,9 +2,7 @@ import {
   createContext,
   useContext,
   useMemo,
-  useReducer,
-  useEffect,
-  useState,
+  useReducer
 } from "react";
 import { appReducer, initialState } from "./AppReducer";
 
