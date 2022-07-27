@@ -5,7 +5,7 @@ import "../styles/home.css";
 import { useAppContext } from "../context/AppContext";
 
 function Home() {
-  const { state, dispatch } = useAppContext();
+  const { dispatch } = useAppContext();
   const navigate = useNavigate();
   const inputRef = useRef();
 

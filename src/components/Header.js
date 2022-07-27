@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 import "../styles/header.css";
@@ -20,9 +19,10 @@ const Header = ({ name }) => {
       <nav className="nav">
         <Link
           className={home ? "navActive" : "navHome"}
-          to="/"
+          to={pathname === "/" ? "/" : "/"}
           onClick={() => {
-            if (pathname !== "/") alternate();
+            if (pathname === "/") {
+            } else alternate();
           }}
         >
           Home
@@ -30,10 +30,7 @@ const Header = ({ name }) => {
         |{" "}
         <Link
           className={survey ? "navActive" : "navSurvey"}
-          to="survey"
-          onClick={() => {
-            if (pathname !== "/survey") alternate();
-          }}
+          to={pathname === "/" ? "/" : "/survey"}
         >
           Survey
         </Link>

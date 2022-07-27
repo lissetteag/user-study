@@ -4,7 +4,6 @@ import TableRow from "../components/TableRow";
 import TableTitle from "../components/TableTitle";
 import participants from "../data/ParticipantsWithCaseIDs.json";
 import data from "../data/JSSUserStudyCases_311Education.json";
-import Home from "../pages/Home";
 import { useAppContext } from "../context/AppContext";
 
 // const attributes = [
@@ -28,7 +27,7 @@ import { useAppContext } from "../context/AppContext";
 // ];
 
 function getPageData(case_id) {
-  const caseIds = participants[case_id]["caseID"];
+  const caseIds = participants[case_id ? case_id : 0]["caseID"];
 
   let caseIDdataArray = [];
 
@@ -41,21 +40,24 @@ function getPageData(case_id) {
 }
 
 function Survey() {
-  const { state, dispatch } = useAppContext();
+  const { state } = useAppContext();
   const [page, setPage] = useState(1);
   let imgs = [74, 266, 476];
+  console.log("****************", page);
 
   /* Function definition */
   const nextPage = (e) => {
     e.preventDefault();
-    setPage(page + 1);
+
     if (page === 3) setPage(0);
+    else setPage(page + 1);
   };
 
   const prevPage = (e) => {
     e.preventDefault();
-    setPage(page - 1);
+
     if (page === 0) setPage(3);
+    else setPage(page - 1);
   };
 
   const reset = (e) => {
@@ -64,10 +66,10 @@ function Survey() {
 
   /* Function calls */
   let data = getPageData(state.id);
-  console.log(state);
+  // console.log(state);
 
-  let currentData = data[page - 1];
-  console.log(currentData);
+  let currentData = data[page - 1 < 0 ? setPage(1) : page - 1];
+  // console.log(currentData);
 
   let methods = currentData.filter((curr) => curr.type === "Operation");
   let attributes = currentData.filter((curr) => curr.type === "Property");
@@ -88,7 +90,10 @@ function Survey() {
       <div className="container">
         <div className="leftBlock">
           <div className="image">
-            <img src={`/img/${imgs[page - 1]}.png`} alt="first" />
+            <img
+              src={`/img/${imgs[page - 1 < 0 ? setPage(1) : page - 1]}.png`}
+              alt="first"
+            />
           </div>
           <div className="description">
             <h3>Information</h3>
@@ -155,7 +160,7 @@ function Survey() {
                 id=""
                 placeholder="Your recommendation"
               />
-              {page !== 0 && <button onClick={prevPage}>Previous</button>}
+              {page !== 1 && <button onClick={prevPage}>Previous</button>}
               {page !== 3 && <button onClick={nextPage}>Next</button>}
               {page === 3 && <button onClick={reset}>Submit</button>}
             </div>
