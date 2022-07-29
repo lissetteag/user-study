@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "../styles/home.css";
+import "../styles/finish.css";
 
 function Finish() {
 //   const history = useHistory()

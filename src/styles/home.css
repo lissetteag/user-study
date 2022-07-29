@@ -3,25 +3,35 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 1.4rem; 
 }
 
+/*Home page paragraph */
 .home p {
   width: 60%;
   margin-top: 3rem;
   margin-bottom: 5rem;
-  font-size: 1.2rem;
+  font-size: 1.9rem;  
+  color : #3B1342;
 }
 
+/* Text holder */
 .inputId {
   margin: 1rem 0 1rem 0;
   padding: 0.6rem;
   outline: none;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
+/* Next button */
 .buttonID {
-  padding: 0.38rem 1.5rem;
-  font-size: 1.1rem;
-  background-color: #25609c;
   color: #fff;
+  background-color: #BF557B;
+  margin-left: 6rem;
+  text-decoration: none;
+  padding: 0.38rem 1.5rem;
+  font-size: 1.5rem;
+  border: none;
 }

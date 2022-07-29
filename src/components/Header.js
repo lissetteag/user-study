@@ -15,7 +15,11 @@ const Header = ({ name }) => {
 
   return (
     <div className="header">
-      <h1>Droid</h1>
+      <div className="img">
+      <img src="gen/default-monochrome-black.svg" height={80} width={200} alt="ygfytfytt"/>
+      </div>
+      {/* <h1>image</h1> */}
+      
       <nav className="nav">
         <Link
           className={home ? "navActive" : "navHome"}
